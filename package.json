@@ -1,0 +1,15 @@
+{
+  "name": "signup-mern-app",
+  "version": "1.0.0",
+  "description": "Sign Up app using React, Express.js REST API and MongoDB",
+  "scripts": {
+    "install-all": "npm install && npm install --prefix server && npm install --prefix client",
+    "server": "npm run dev --prefix server",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,115 @@
+:root {
+  --ink: #2b2b2b;
+  --muted: #6f6f6f;
+  --line: #8a8a8a;
+  --blue: #8ac4f2;
+  --blue-dark: #5aa9e6;
+  --danger: #c0392b;
+  --danger-bg: #fdecea;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  color: var(--ink);
+  font-family: "Raleway", system-ui, sans-serif;
+}
+
+.card {
+  width: min(440px, 92vw);
+  padding: 48px 8px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 18px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 400;
+  font-size: 3rem;
+  letter-spacing: 0.5px;
+}
+
+.sub { margin: 0 0 56px; font-size: 1.1rem; }
+.sub a { color: var(--blue-dark); text-decoration: none; }
+.sub a:hover { text-decoration: underline; }
+
+form { text-align: left; }
+
+/* Floating-label underline inputs, like the reference design */
+.field { position: relative; margin-bottom: 44px; }
+
+.field input {
+  width: 100%;
+  padding: 22px 0 8px;
+  border: 0;
+  border-bottom: 1.5px solid var(--line);
+  background: transparent;
+  font: inherit;
+  font-size: 1.1rem;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.field input:focus { border-bottom-color: var(--blue-dark); }
+
+.field label {
+  position: absolute;
+  left: 0;
+  top: 22px;
+  font-size: 1.15rem;
+  color: var(--muted);
+  pointer-events: none;
+  transition: all 0.18s ease;
+}
+
+.field input:focus + label,
+.field input:not(:placeholder-shown) + label {
+  top: 0;
+  font-size: 0.8rem;
+  color: var(--blue-dark);
+}
+
+.btn {
+  width: 100%;
+  padding: 18px;
+  border: 0;
+  background: var(--blue);
+  color: #fff;
+  font: inherit;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn:hover:not(:disabled) { background: var(--blue-dark); }
+.btn:disabled { opacity: 0.7; cursor: wait; }
+
+.error {
+  margin: -12px 0 22px;
+  padding: 12px 14px;
+  border-left: 4px solid var(--danger);
+  background: var(--danger-bg);
+  color: var(--danger);
+  font-size: 0.95rem;
+}
+
+.tick {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--blue);
+  color: #fff;
+  font-size: 2.2rem;
+}
+
+.card strong { color: var(--ink); font-weight: 500; }
+.card .btn { margin-top: 8px; }
