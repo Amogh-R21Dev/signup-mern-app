@@ -13,12 +13,9 @@ A sign-up (and log-in) flow built with the MERN stack. The React front end talks
 ### 3. Sign up failed (email already registered)
 ![Sign up failed](screenshots/3-signup-failed.png)
 
-### 4. Data stored in MongoDB after signing up
-![MongoDB output](screenshots/4-mongodb-output.png)
 
-The same output as text (database `signupdb`, collection `users`):
 
-```json
+
 [
   {
     "_id": "6adfa08a12b32825678c9c3f",
@@ -39,45 +36,6 @@ The same output as text (database `signupdb`, collection `users`):
 ]
 ```
 
-Note that the `password` field is a bcrypt hash, not the real password.
-
-## Tech stack
-
-| Layer     | Technology                         |
-|-----------|------------------------------------|
-| Front end | React 18 (Vite), plain CSS         |
-| Back end  | Node.js, Express.js (REST API)     |
-| Database  | MongoDB with Mongoose              |
-| Security  | bcryptjs password hashing          |
-
-## Project structure
-
-```
-signup-mern-app/
-├── client/                 React front end
-│   ├── index.html
-│   ├── vite.config.js      dev server + proxy to the API
-│   └── src/
-│       ├── main.jsx
-│       ├── App.jsx         sign up / log in form logic
-│       └── styles.css      all styling
-├── server/                 Express REST API
-│   ├── server.js           app entry, MongoDB connection
-│   ├── models/User.js      Mongoose user schema
-│   ├── routes/auth.js      /signup and /login endpoints
-│   ├── show-users.js       prints stored users
-│   └── .env.example        environment variables template
-├── screenshots/
-└── package.json            helper scripts
-```
-
-## REST API
-
-| Method | Endpoint           | Body                  | Success         | Errors                                   |
-|--------|--------------------|-----------------------|-----------------|------------------------------------------|
-| POST   | `/api/auth/signup` | `{ email, password }` | `201` + user    | `400` invalid input, `409` email exists  |
-| POST   | `/api/auth/login`  | `{ email, password }` | `200` + user    | `400` missing fields, `401` bad login    |
-| GET    | `/api/health`      | none                  | `200` `{status}`| none                                     |
 
 ## How to run
 
