@@ -25,6 +25,7 @@ A sign-up (and log-in) flow built with the MERN stack. The React front end talks
     "updatedAt": "2026-10-26T18:48:42.569Z",
     "__v": 0
   },
+  
   {
     "_id": "6adfa08c12b32825678c9c40",
     "email": "priya@example.com",
